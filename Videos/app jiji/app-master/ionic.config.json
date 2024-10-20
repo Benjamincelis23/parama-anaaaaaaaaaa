@@ -1,0 +1,7 @@
+{
+  "name": "appalme",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
