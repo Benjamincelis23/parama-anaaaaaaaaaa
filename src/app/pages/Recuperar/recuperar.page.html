@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Recuperar Contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <!-- Sección para el formulario de recuperación -->
+    <ion-row>
+      <ion-col>
+        <ion-text>
+          <h2>Recupera tu contraseña</h2>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+
+    <!-- Formulario de recuperación -->
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Usuario</ion-label>
+          <ion-input type="text" [(ngModel)]="usuario" (ionBlur)="validarUsuario()"></ion-input>
+        </ion-item>
+        <ion-text color="danger" *ngIf="mensajeErrorUsuario">{{ mensajeErrorUsuario }}</ion-text>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Correo Electrónico</ion-label>
+          <ion-input type="email" [(ngModel)]="correoElectronico" (ionBlur)="validarCorreo()"></ion-input>
+        </ion-item>
+        <ion-text color="danger" *ngIf="mensajeErrorCorreo">{{ mensajeErrorCorreo }}</ion-text>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Confirma el Correo</ion-label>
+          <ion-input type="email" [(ngModel)]="correoConfirmacion" (ionBlur)="validarConfirmacion()"></ion-input>
+        </ion-item>
+        <ion-text color="danger" *ngIf="mensajeErrorConfirmacion">{{ mensajeErrorConfirmacion }}</ion-text>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" (click)="enviarEnlace()">Enviar Enlace de Recuperación</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
