@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registro de Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Formulario de registro -->
+  <form (ngSubmit)="crearCuenta()" #registroForm="ngForm">
+    <!-- Nombre -->
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" [(ngModel)]="nombre" name="nombre" required></ion-input>
+    </ion-item>
+    <div *ngIf="registroForm.controls['nombre']?.invalid && registroForm.controls['nombre']?.touched">
+      <p class="error">El nombre es obligatorio.</p>
+    </div>
+
+    <!-- Apellido -->
+    <ion-item>
+      <ion-label position="floating">Apellido</ion-label>
+      <ion-input type="text" [(ngModel)]="apellido" name="apellido" required></ion-input>
+    </ion-item>
+    <div *ngIf="registroForm.controls['apellido']?.invalid && registroForm.controls['apellido']?.touched">
+      <p class="error">El apellido es obligatorio.</p>
+    </div>
+
+    <!-- RUT -->
+    <ion-item>
+      <ion-label position="floating">RUT</ion-label>
+      <ion-input type="text" [(ngModel)]="rut" name="rut" required></ion-input>
+    </ion-item>
+    <div *ngIf="registroForm.controls['rut']?.invalid && registroForm.controls['rut']?.touched">
+      <p class="error">El RUT es obligatorio.</p>
+    </div>
+
+    <!-- Número de teléfono -->
+    <ion-item>
+      <ion-label position="floating">Número de teléfono</ion-label>
+      <ion-input type="tel" [(ngModel)]="telefono" name="telefono" required></ion-input>
+    </ion-item>
+    <div *ngIf="registroForm.controls['telefono']?.invalid && registroForm.controls['telefono']?.touched">
+      <p class="error">El número de teléfono es obligatorio.</p>
+    </div>
+
+    <!-- Correo electrónico -->
+    <ion-item>
+      <ion-label position="floating">Correo electrónico</ion-label>
+      <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
+    </ion-item>
+    <div *ngIf="registroForm.controls['email']?.invalid && registroForm.controls['email']?.touched">
+      <p class="error">El correo electrónico es obligatorio y debe ser válido.</p>
+    </div>
+
+    <!-- Contraseña -->
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
+    </ion-item>
+    <div *ngIf="registroForm.controls['password']?.invalid && registroForm.controls['password']?.touched">
+      <p class="error">La contraseña es obligatoria.</p>
+    </div>
+
+    <!-- Botón para crear la cuenta -->
+    <ion-button expand="block" type="submit" [disabled]="!registroForm.form.valid">Crear Cuenta</ion-button>
+  </form>
+</ion-content>

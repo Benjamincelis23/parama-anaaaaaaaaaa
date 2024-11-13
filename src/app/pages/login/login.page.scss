@@ -1,0 +1,75 @@
+/* Fondo de la página */
+ion-content {
+  --background: #f1f3f4; /* Color de fondo */
+}
+
+/* Contenedor principal para el diseño */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+/* Estilos para el formulario de inicio de sesión */
+.login-form {
+  width: 100%;
+  max-width: 400px; /* Ajusta el ancho máximo del formulario */
+  background: #ffffff; /* Fondo blanco para el formulario */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Estilos para los elementos del formulario */
+ion-item {
+  margin-bottom: 16px;
+}
+
+/* Estilos para los botones */
+ion-button {
+  margin-top: 16px;
+  --background: #68c8f1; /* Color de fondo del botón principal */
+  --color: #ffffff; /* Color del texto del botón principal */
+  --border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Estilos para el botón de restablecer contraseña */
+ion-button[fill="clear"] {
+  --background: transparent; /* Fondo transparente para el botón claro */
+  --color: #44a7cf; /* Color del texto para el botón claro */
+}
+
+/* Estilos para el título del encabezado */
+ion-title {
+  color: #5e51a3; /* Color morado para el título */
+  font-weight: bold; /* Aumenta el peso de la fuente */
+  font-size: 24px; /* Aumenta el tamaño de la fuente */
+  text-align: center; /* Centra el título */
+}
+
+/* Animación para mover el título del encabezado */
+@keyframes move-title {
+  0% {
+    transform: translateX(0); /* Posición inicial */
+  }
+  50% {
+    transform: translateX(20px); /* Se mueve a la derecha */
+  }
+  100% {
+    transform: translateX(0); /* Regresa a la posición original */
+  }
+}
+
+/* Aplicar la animación al título */
+ion-title.animate-title {
+  display: inline-block; /* Necesario para aplicar transformaciones */
+  animation: move-title 3s infinite ease-in-out; /* Duración y repetición */
+}
+
+/* Estilos adicionales para el botón secundario */
+ion-button.secondary {
+  --background: #5e51a3; /* Color de fondo para el botón secundario */
+  --color: #ffffff; /* Color del texto del botón secundario */
+}
