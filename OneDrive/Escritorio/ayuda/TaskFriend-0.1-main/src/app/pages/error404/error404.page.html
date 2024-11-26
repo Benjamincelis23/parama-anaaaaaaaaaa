@@ -1,0 +1,18 @@
+<ion-header [translucent]="false">
+  <ion-toolbar>
+    <ion-title>Hey, aquí no hay nada que ver</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="error404-container">
+  <!-- Imagen de error centrada y de mayor tamaño -->
+  <ion-img class="error-img" src="assets/icon/error.jpeg"></ion-img>
+
+  <!-- Título adicional antes del botón -->
+  <ion-title class="error-message">Vuelve al login</ion-title>
+  
+  <!-- Botón para regresar al login -->
+  <ion-button expand="block" fill="solid" class="button-login" [routerLink]="['/login']">
+    Volver al login
+  </ion-button>
+</ion-content>

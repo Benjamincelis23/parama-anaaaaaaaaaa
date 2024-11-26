@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Reserva de Cita</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
+    <!-- Selección de especialidad -->
+    <ion-item>
+      <ion-label position="stacked">Especialidad</ion-label>
+      <ion-select formControlName="specialty" required>
+        <ion-select-option value="cardiology">Cardiología</ion-select-option>
+        <ion-select-option value="dermatology">Dermatología</ion-select-option>
+        <ion-select-option value="neurology">Neurología</ion-select-option>
+        <!-- Agrega más opciones según las especialidades disponibles -->
+      </ion-select>
+    </ion-item>
+
+    <!-- Selección de hospital -->
+    <ion-item>
+      <ion-label position="stacked">Hospital</ion-label>
+      <ion-select formControlName="hospital" required>
+        <ion-select-option *ngFor="let hospital of hospitals" [value]="hospital.id">
+          {{ hospital.name }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Selección de fecha -->
+    <ion-item>
+      <ion-label position="stacked">Fecha de la cita</ion-label>
+      <ion-datetime formControlName="appointmentDate" displayFormat="DD/MM/YYYY" min="2024-01-01" required></ion-datetime>
+    </ion-item>
+
+    <!-- Detalles adicionales -->
+    <ion-item>
+      <ion-label position="stacked">Notas</ion-label>
+      <ion-textarea formControlName="notes" placeholder="Escriba cualquier detalle adicional..."></ion-textarea>
+    </ion-item>
+
+    <ion-button expand="full" type="submit" [disabled]="!appointmentForm.valid">Confirmar Cita</ion-button>
+  </form>
+</ion-content>

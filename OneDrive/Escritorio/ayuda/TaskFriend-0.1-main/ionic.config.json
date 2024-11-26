@@ -1,0 +1,7 @@
+{
+  "name": "TaskFriend",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

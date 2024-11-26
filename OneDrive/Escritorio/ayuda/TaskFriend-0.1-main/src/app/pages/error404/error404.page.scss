@@ -1,0 +1,29 @@
+/* Aseguramos que los estilos solo se apliquen a esta página */
+.error404-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white; /* Fondo blanco */
+    color: black; /* Texto en negro */
+    padding: 20px;
+  }
+  
+  .error-message {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    color: black; /* Color del texto */
+  }
+  
+  /* Especificamos que el encabezado de esta página debe tener un fondo blanco */
+  .error404-container ion-header {
+    background-color: white; /* Fondo blanco para el encabezado */
+    color: black; /* Texto negro */
+  }
+  
+  /* El toolbar de esta página tendrá fondo blanco y texto negro */
+  .error404-container ion-toolbar {
+    --background: white; /* Fondo blanco para el toolbar */
+    color: black; /* Texto negro en el toolbar */
+  }
+  
